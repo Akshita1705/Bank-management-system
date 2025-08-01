@@ -51,8 +51,15 @@ public class SignupOne extends JFrame implements ActionListener{
         dob.setBounds(100,240,200,30);
         add(dob);
 
-        dateChooser=new JDateChooser();
-        dateChooser.setBounds(300,240,400,20);
+        dateChooser = new JDateChooser();
+        dateChooser.setBounds(300, 240, 400, 20);
+
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.YEAR, -18);
+        Date maxDate = cal.getTime();
+
+        dateChooser.setMaxSelectableDate(maxDate);
+
         add(dateChooser);
 
         JLabel gender=new JLabel("Gender:");
